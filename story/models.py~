@@ -1,0 +1,18 @@
+from django.db import models
+
+# Create your models here.
+class Contacts(models.Model):
+	_id = models.CharField(max_length=200)
+	full_name = models.CharField(max_length=200)
+	phone_number = models.CharField(max_length=200)
+	email = models.CharField(max_length=200)
+
+from django.http import HttpResponse  
+from models import *  
+  
+def testview(request):  
+  Contacts = Contacts(_id = '7800',  
+    full_name = 'pranay',phone_number='0909090909',email='pranay@gmail.com') 
+  contact.save()  
+  
+  return HttpResponse("<h1>Saved!</h1>")
